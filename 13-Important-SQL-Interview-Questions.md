@@ -12,6 +12,11 @@
 9. What is a view in SQL?
 10. What is the difference between WHERE and HAVING clause?
 
+11. What is a window function?
+12. Explain transaction isolation levels.
+13. What is the difference between DELETE and TRUNCATE?
+14. What is indexing and why is it important?
+
 ## Sample Answers
 - See other topic files for detailed answers.
 

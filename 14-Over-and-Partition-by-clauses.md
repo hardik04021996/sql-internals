@@ -51,6 +51,15 @@ A: Yes, ORDER BY inside OVER() defines the order for calculations like running t
 **Q: Can you use both PARTITION BY and ORDER BY together?**
 A: Yes, you can partition the data and then order within each partition for advanced analytics.
 
+**Q: What is a window frame?**
+A: It defines the subset of rows for window calculations, e.g., ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW.
+
+**Q: Can you use window functions with aggregate functions?**
+A: Yes, window functions can be used with aggregates for advanced analytics.
+
+**Q: What is the difference between RANK() and DENSE_RANK()?**
+A: RANK() skips ranks for ties; DENSE_RANK() does not.
+
 
 ---
 
