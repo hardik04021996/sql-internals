@@ -24,4 +24,4 @@ SELECT * FROM high_salary WHERE location = 'Bangalore';
 A: To simplify complex queries and improve readability by breaking them into logical building blocks.
 
 ---
-*Extracted from transcript session 3.*
+

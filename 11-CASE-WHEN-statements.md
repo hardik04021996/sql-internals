@@ -30,4 +30,4 @@ FROM employee;
 A: To implement conditional logic in SQL queries.
 
 ---
-*Extracted from transcript session 2.*
+

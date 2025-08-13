@@ -23,4 +23,4 @@ INNER JOIN department d ON e.dept_id = d.dept_id;
 A: INNER JOIN returns only matching records; LEFT JOIN returns all records from the left table and matching records from the right.
 
 ---
-*Extracted from transcript session 3.*
+

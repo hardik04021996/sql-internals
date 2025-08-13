@@ -16,4 +16,4 @@
 - See other topic files for detailed answers.
 
 ---
-*Extracted from transcript sessions 1-3.*
+

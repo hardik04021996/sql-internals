@@ -46,4 +46,4 @@ A: Mainly in features (like security, performance, etc.), not in SQL syntax. SQL
 - SQL is the standard language for relational databases.
 - Choice of database depends on features, not SQL syntax.
 
-*Extracted from transcript session 1.*
+

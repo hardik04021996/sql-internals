@@ -15,4 +15,4 @@ FROM employee;
 A: It gives a unique row number for each row within a partition.
 
 ---
-*Extracted from transcript session 3.*
+

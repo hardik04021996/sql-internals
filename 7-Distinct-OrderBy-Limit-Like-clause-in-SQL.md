@@ -38,4 +38,4 @@ A: Use LIMIT with the desired number.
 A: Use LIKE with wildcards (% or _).
 
 ---
-*Extracted from transcript session 3.*
+

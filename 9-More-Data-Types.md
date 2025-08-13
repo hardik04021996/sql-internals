@@ -28,4 +28,4 @@ A: Most databases require you to specify a length; otherwise, a default may be u
 A: Use TEXT for very large strings (e.g., descriptions, comments) that may exceed VARCHAR limits.
 
 ---
-*Extracted from transcript session 2.*
+

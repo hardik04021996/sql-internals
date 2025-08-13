@@ -39,4 +39,4 @@ A: The database will throw an error and prevent the insert or update.
 A: If the referenced row is deleted, all related rows in the child table are also deleted automatically.
 
 ---
-*Extracted from transcript session 3.*
+

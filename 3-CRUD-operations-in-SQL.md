@@ -67,4 +67,4 @@ VALUES ('A', 'B', 25, 10000, 'City1'),
 ```
 
 ---
-*Extracted from transcript session 2.*
+

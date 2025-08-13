@@ -17,4 +17,4 @@ FROM employee;
 A: RANK() leaves gaps after ties; DENSE_RANK() does not.
 
 ---
-*Extracted from transcript session 3.*
+

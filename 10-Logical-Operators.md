@@ -19,4 +19,4 @@ SELECT * FROM employee WHERE NOT location = 'Delhi';
 A: Yes, you can use parentheses to group conditions.
 
 ---
-*Extracted from transcript session 2.*
+

@@ -22,4 +22,4 @@ SELECT AVG(salary) FROM employee;
 A: Yes, to calculate values for each group.
 
 ---
-*Extracted from transcript session 3.*
+

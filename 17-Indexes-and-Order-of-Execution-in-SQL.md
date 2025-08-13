@@ -38,4 +38,4 @@ A: To speed up data retrieval operations.
 A: See the table above for the standard order.
 
 ---
-*Extracted from transcript session 3.*
+

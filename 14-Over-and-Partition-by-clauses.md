@@ -53,4 +53,4 @@ A: Yes, you can partition the data and then order within each partition for adva
 
 
 ---
-*Extracted from transcript session 3. Expanded with more use cases and clarifications.*
+

@@ -27,4 +27,4 @@ A: 99% of SQL syntax is the same across relational databases, with minor differe
 - SQL queries are used for all major operations on data.
 
 ---
-*Extracted from transcript session 1.*
+
