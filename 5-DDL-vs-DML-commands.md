@@ -31,7 +31,6 @@
 **Q: What is the difference between DDL and DML?**
 A: DDL changes the structure of the database (tables, schemas), DML changes the data inside tables.
 
-
 **Q: Can you roll back a DDL command?**
 A: Usually no, DDL commands (like CREATE, ALTER, DROP) are auto-committed, meaning changes are saved immediately and cannot be undone with a rollback. This is because structural changes to the database are considered permanent as soon as they are executed.
 
@@ -82,6 +81,46 @@ ROLLBACK;
     -- If you want to undo:
     ROLLBACK; -- All changes since BEGIN are undone
     ```
+
+**How ACID is followed in complex queries with COMMIT and ROLLBACK:**
+When you run a query or a series of queries inside a transaction (using BEGIN), the database ensures ACID properties:
+
+- **Atomicity:** All operations within the transaction are treated as a single unit. Either all succeed (COMMIT) or none are applied (ROLLBACK).
+- **Consistency:** The database moves from one valid state to another. If any part of the transaction fails, ROLLBACK restores the previous consistent state.
+- **Isolation:** Changes made in the transaction are not visible to other users until COMMIT. Other transactions cannot see partial results.
+- **Durability:** Once COMMIT is issued, changes are permanently saved, even if there is a system failure.
+
+**Example:**
+Suppose you want to transfer money between two accounts:
+```sql
+BEGIN;
+UPDATE accounts SET balance = balance - 100 WHERE id = 1;
+UPDATE accounts SET balance = balance + 100 WHERE id = 2;
+-- If both succeed:
+COMMIT;
+-- If any error occurs (e.g., insufficient funds):
+ROLLBACK;
+```
+If any part of the transaction fails (e.g., the first UPDATE fails due to insufficient funds), ROLLBACK undoes all changes, ensuring atomicity and consistency. Only when both updates succeed do you COMMIT, making the transfer permanent and visible to others.
+
+**Single query with subqueries and ACID in autocommit mode:**
+If you run a single SQL statement—even if it contains multiple subqueries or operations—without explicitly starting a transaction (BEGIN), most databases operate in autocommit mode. The entire statement is treated as a single atomic operation: if it succeeds, all changes are committed immediately; if it fails, no changes are applied. You cannot use ROLLBACK to undo the changes after the statement completes, because the commit happens automatically.
+
+ACID properties are still followed for that statement:
+- **Atomicity:** The statement is all-or-nothing; either all changes succeed or none are applied.
+- **Consistency:** The database remains in a valid state before and after the statement.
+- **Isolation:** Other users do not see partial results during execution.
+- **Durability:** Once the statement finishes, changes are permanent.
+
+**Example:**
+```sql
+UPDATE accounts
+SET balance = balance - 100
+WHERE id = 1 AND balance >= 100 AND EXISTS (
+  SELECT 1 FROM accounts WHERE id = 2
+);
+```
+This query deducts 100 from account 1 only if account 1 has at least 100 balance (sufficient funds) and account 2 exists. The subquery in the WHERE clause ensures account 2 exists, and the balance check ensures atomicity and correctness. If either condition fails, no change is made. The entire statement is atomic in autocommit mode and follows ACID properties for that operation.
 
 ---
 

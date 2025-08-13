@@ -34,9 +34,11 @@ A: Yes, if the relationship is optional. If not, use NOT NULL constraint.
 
 **Q: What happens if you try to insert a value in the foreign key column that does not exist in the referenced table?**
 A: The database will throw an error and prevent the insert or update.
+Explanation: This is called referential integrity. The foreign key constraint checks that every value in the foreign key column matches a value in the referenced primary key column. If you try to insert or update a value that does not exist in the referenced table, the database will reject the operation to prevent invalid relationships.
 
 **Q: What is ON DELETE CASCADE?**
 A: If the referenced row is deleted, all related rows in the child table are also deleted automatically.
+Explanation: ON DELETE CASCADE is an option you can set on a foreign key constraint. It means that when a row in the parent table (referenced table) is deleted, all rows in the child table (the table with the foreign key) that reference that row will also be deleted. This helps maintain data consistency and prevents orphaned records in the child table.
 
 ---
 
