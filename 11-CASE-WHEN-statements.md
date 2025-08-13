@@ -25,6 +25,14 @@ SELECT name, salary,
 FROM employee;
 ```
 
+Sample result:
+
+| name   | salary | salary_category |
+|--------|--------|----------------|
+| Alice  | 25000  | High           |
+| Bob    | 15000  | Medium         |
+| Carol  | 9000   | Low            |
+
 ## Q&A
 **Q: What is the use of CASE WHEN?**
 A: To implement conditional logic in SQL queries.
