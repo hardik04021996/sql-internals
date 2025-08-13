@@ -3,41 +3,41 @@
 ## What are Aggregate Functions?
 Aggregate functions perform calculations on multiple rows and return a single value.
 
-| Function | Description                |
-|----------|----------------------------|
-| COUNT    | Counts number of rows      |
-| SUM      | Adds up values             |
-| AVG      | Calculates average         |
-| MIN      | Finds minimum value        |
-| MAX      | Finds maximum value        |
-| Function | Description                |
-|----------|----------------------------|
-| COUNT    | Counts rows or non-NULL values |
-| SUM      | Adds up numeric values     |
+| Function | Description                       |
+|----------|-----------------------------------|
+| COUNT    | Counts rows or non-NULL values    |
+| SUM      | Adds up numeric values            |
 | AVG      | Calculates average of numeric values |
-| MIN      | Finds minimum value        |
-| MAX      | Finds maximum value        |
+| MIN      | Finds minimum value               |
+| MAX      | Finds maximum value               |
 
 ## Example
 ```sql
+-- Count all employees
 SELECT COUNT(*) FROM employee;
+
+-- Average salary of all employees
 SELECT AVG(salary) FROM employee;
-SELECT COUNT(*) FROM employee;
+
+-- Total salary paid
 SELECT SUM(salary) FROM employee;
-SELECT AVG(age) FROM employee;
+
+-- Minimum and maximum salary
 SELECT MIN(salary) FROM employee;
 SELECT MAX(salary) FROM employee;
+
+-- Count employees per department
 SELECT department, COUNT(*) FROM employee GROUP BY department;
+
+-- Average salary per department, only departments with avg salary > 20000
 SELECT department, AVG(salary) FROM employee GROUP BY department HAVING AVG(salary) > 20000;
 ```
 
 ## Q&A
-**Q: Can aggregate functions be used with GROUP BY?**
-A: Yes, to calculate values for each group.
 **Q: What are aggregate functions?**
-A: Functions that operate on sets of rows and return a single value.
+A: Functions that operate on sets of rows and return a single value (e.g., COUNT, SUM, AVG, MIN, MAX).
 
-**Q: Can you use aggregate functions with GROUP BY?**
+**Q: Can aggregate functions be used with GROUP BY?**
 A: Yes, GROUP BY groups rows and aggregate functions calculate values for each group.
 
 **Q: What does HAVING do?**
