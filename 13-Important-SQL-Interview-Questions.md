@@ -43,8 +43,5 @@
 14. What is indexing and why is it important?
     - Indexes are special data structures that speed up data retrieval operations. They can be single-column, composite, or covering indexes. Indexes improve read performance but can slow down writes and take up extra space.
 
-## Sample Answers
-
-
 ---
 
