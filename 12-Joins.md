@@ -103,30 +103,39 @@ INNER JOIN employee b ON a.manager_id = b.id;
 
 ## Q&A
 **Q: What is the difference between INNER JOIN and LEFT JOIN?**
+
 A: INNER JOIN returns only matching records; LEFT JOIN returns all records from the left table and matching records from the right.
 
 **Q: What is the default join in SQL?**
+
 A: If you write JOIN without specifying a type, it is treated as INNER JOIN by default in most SQL databases, including MySQL and PostgreSQL.
 
 **Q: What is a CROSS JOIN?**
+
 A: Returns the Cartesian product of two tables.
 
 **Q: What is the use case of CROSS JOIN?**
+
 A: CROSS JOIN is useful when you need all possible combinations of rows from two tables. For example, generating a list of every employee with every department, or creating test data for all possible pairs.
 
 **Q: What is a SELF JOIN?**
+
 A: A table joined with itself.
 
 **Q: Can you join more than two tables?**
+
 A: Yes, you can join multiple tables in a single query.
 
 **Q: What is an equi join?**
+
 A: A join using equality comparison in the ON clause.
 
 **Use case:**
+
 Equi join is used when you want to combine rows from two tables based on matching values in specified columns.
 
 **Example:**
+
 ```sql
 SELECT e.name, d.dept_name
 FROM employee e
@@ -135,9 +144,11 @@ JOIN department d ON e.dept_id = d.dept_id;
 This query returns employee names along with their department names where the dept_id matches in both tables.
 
 **Q: Is LEFT JOIN a type of equi join?**
+
 A: Yes, LEFT JOIN can be an equi join if the join condition uses equality (e.g., ON a.id = b.id). Equi join refers to the condition, while LEFT JOIN refers to the type of join (all rows from the left table, matched rows from the right). Most LEFT JOINs in practice are equi joins.
 
 **Example of LEFT JOIN that is not an equi join:**
+
 Suppose you want to find all possible promotion opportunities for employees by listing all designations with a higher grade than the employee's current grade. This helps HR or managers see which designation an employee could be promoted to based on grade hierarchy.
 
 **Input tables:**
@@ -158,6 +169,7 @@ Suppose you want to find all possible promotion opportunities for employees by l
 | 3     | Lead Engineer     |
 
 **Query:**
+
 ```sql
 SELECT e.name, g.designation
 FROM employee e
@@ -168,6 +180,7 @@ This query lists each employee with all departments that have a higher grade tha
 This query lists each employee with all designations that have a higher grade than the employee's current grade. If an employee is already at the highest grade, the designation column will be NULL for that employee.
 
 **Sample output:**
+
 | name   | designation      |
 |--------|-----------------|
 | Alice  | Senior Engineer |

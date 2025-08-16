@@ -35,15 +35,19 @@ Sample result:
 
 ## Q&A
 **Q: What is the use of CASE WHEN?**
+
 A: To implement conditional logic in SQL queries.
 
 **Q: Can CASE WHEN be used in ORDER BY or GROUP BY?**
+
 A: Yes, you can use CASE WHEN in these clauses for custom sorting or grouping.
 
 **Q: What happens if no WHEN condition matches?**
+
 A: The ELSE branch is used; if omitted, NULL is returned.
 
 **Q: Is CASE WHEN evaluated row by row?**
+
 A: Yes, CASE WHEN is evaluated for each row in the result set.
 
 ---

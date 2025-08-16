@@ -17,9 +17,11 @@ Because it is used to deal with structured data (data in rows and columns).
 
 ## Q&A
 **Q: What is the difference between MySQL and SQL?**
+
 A: MySQL is a database system; SQL is the language used to interact with it.
 
 **Q: Is SQL the same for all relational databases?**
+
 A: 99% of SQL syntax is the same across relational databases, with minor differences.
 
 ## Key Points

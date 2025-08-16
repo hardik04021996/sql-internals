@@ -27,20 +27,25 @@ CREATE TABLE employee (
 
 ## Q&A
 **Q: Why use a foreign key?**
+
 A: To ensure data consistency and enforce relationships between tables. It prevents orphan records.
 
 **Q: Can a foreign key be NULL?**
+
 A: Yes, if the relationship is optional. If not, use NOT NULL constraint.
 
 **Q: What happens if you try to insert a value in the foreign key column that does not exist in the referenced table?**
+
 A: The database will throw an error and prevent the insert or update.
 Explanation: This is called referential integrity. The foreign key constraint checks that every value in the foreign key column matches a value in the referenced primary key column. If you try to insert or update a value that does not exist in the referenced table, the database will reject the operation to prevent invalid relationships.
 
 **Q: What is ON DELETE CASCADE?**
+
 A: If the referenced row is deleted, all related rows in the child table are also deleted automatically.
 Explanation: ON DELETE CASCADE is an option you can set on a foreign key constraint. It means that when a row in the parent table (referenced table) is deleted, all rows in the child table (the table with the foreign key) that reference that row will also be deleted. This helps maintain data consistency and prevents orphaned records in the child table.
 
 **How to use CASCADE?**
+
 CASCADE is an optional action you can specify when defining a foreign key constraint. By default, if you do not specify CASCADE, the database will prevent deletion of a parent row if child rows exist (restrict behavior). To use CASCADE, add `ON DELETE CASCADE` or `ON UPDATE CASCADE` to your foreign key definition:
 
 ```sql
@@ -54,6 +59,7 @@ CREATE TABLE employee (
 This means if a department is deleted, all employees in that department are also deleted. You can choose to use CASCADE or not, depending on your data integrity needs.
 
 **If you don't use CASCADE, will UPDATE and DELETE work?**
+
 If you do not specify CASCADE, the default behavior is RESTRICT or NO ACTION. This means:
 - **DELETE:** If you try to delete a parent row (e.g., a department) that has related child rows (e.g., employees), the database will prevent the deletion and throw an error to protect referential integrity.
 - **UPDATE:** If you try to update the referenced key in the parent table, the database will also prevent the update if child rows exist, unless you specify `ON UPDATE CASCADE` or another action (like SET NULL or SET DEFAULT).

@@ -50,15 +50,19 @@ CREATE TABLE employee (
 
 ## Q&A
 **Q: What happens if you try to insert a record with missing columns?**
+
 A: You must specify the columns you are inserting into, or provide values for all columns. Otherwise, you will get a column count mismatch error.
 
 **Q: What is NULL in SQL?**
+
 A: NULL represents an unknown or missing value, not zero. It is not equal to zero or an empty string.
 
 **Q: What happens if you omit the WHERE clause in UPDATE or DELETE?**
+
 A: All rows in the table will be updated or deleted, which is usually a critical mistake.
 
 **Q: How do you insert multiple rows at once?**
+
 A: Use a single INSERT statement with multiple value sets:
 ```sql
 INSERT INTO employee (first_name, last_name, age, salary, location)

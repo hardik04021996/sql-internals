@@ -77,21 +77,25 @@ CREATE TABLE employee (
 );
 ```
 
-
 ## Q&A
 **Q: Can a table have more than one primary key?**
+
 A: No, but it can have a composite primary key (multiple columns together as the unique identifier).
 
 **Q: Can a table have more than one unique key?**
+
 A: Yes, multiple unique keys are allowed.
 
 **Q: Can a primary key be NULL?**
+
 A: No, primary key columns must always have a value.
 
 **Q: Can a unique key be NULL?**
+
 A: Yes, unique key columns can be NULL (except in some databases), but each NULL is treated as a unique value.
 
 **Q: What happens if you try to insert a duplicate value in a primary or unique key column?**
+
 A: The database will throw an error and prevent the insert or update.
 
 ---

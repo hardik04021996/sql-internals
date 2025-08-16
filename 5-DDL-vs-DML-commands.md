@@ -29,24 +29,21 @@
 
 ## Q&A
 **Q: What is the difference between DDL and DML?**
-A: DDL changes the structure of the database (tables, schemas), DML changes the data inside tables.
+A: DDL changes the structure of the database (tables, schemas); DML changes the data inside tables.
 
 **Q: Can you roll back a DDL command?**
-A: Usually no, DDL commands (like CREATE, ALTER, DROP) are auto-committed, meaning changes are saved immediately and cannot be undone with a rollback. This is because structural changes to the database are considered permanent as soon as they are executed.
+A: Usually no, DDL commands (like CREATE, ALTER, DROP) are auto-committed, meaning changes are saved immediately and cannot be undone with a rollback. 
+This is because structural changes to the database are considered permanent as soon as they are executed.
 
 **Q: How do rollbacks and commits work in SQL?**
 A: Rollbacks and commits are part of transaction control in SQL, mainly used with DML commands (INSERT, UPDATE, DELETE).
 
-- **COMMIT**: Saves all changes made during the current transaction to the database permanently.
-- **ROLLBACK**: Undoes all changes made during the current transaction, reverting the database to its previous state.
 
 **Example:**
 ```sql
 BEGIN;
 UPDATE employee SET salary = 20000 WHERE id = 1;
--- If you want to save the change:
 COMMIT;
--- If you want to undo the change:
 ROLLBACK;
 ```
 

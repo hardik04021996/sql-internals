@@ -38,36 +38,47 @@ SELECT * FROM table_name WHERE name LIKE '_a%'; -- second letter is 'a'
 
 ## Q&A
 **Q: What does DISTINCT do?**
+
 A: Removes duplicate values from the result set.
 
 **Q: Can DISTINCT be used with multiple columns?**
+
 A: Yes, it returns unique combinations of the selected columns.
 
 **Q: Can you sort by more than one column?**
+
 A: Yes, separate columns with commas in ORDER BY.
 
 **Q: How do you sort results?**
+
 A: Use ORDER BY with ASC (ascending) or DESC (descending).
 
 **Q: How do you paginate results?**
+
 A: Use LIMIT with OFFSET.
 
 **Q: How to limit results?**
+
 A: Use LIMIT with the desired number.
 
 **Q: What do % and _ mean in LIKE?**
+
 A: % matches any sequence of characters; _ matches a single character.
 
 **Q: How to search for patterns?**
+
 A: Use LIKE with wildcards (% or _).
 
 **Q: What is the order of execution of SQL clauses?**
+
 A: The typical order is: FROM, WHERE, GROUP BY, HAVING, SELECT, ORDER BY, LIMIT. This affects how queries are processed and can impact results.
 
 **Q: Why does SELECT DISTINCT with ORDER BY sometimes fail?**
+
 A: If you use SELECT DISTINCT on one column and ORDER BY another, SQL may throw an error because DISTINCT is applied before ORDER BY, and the ORDER BY column may not be available after projection. This is a common interview question about SQL internals.
 
 **Example:**
+
 ```sql
 SELECT DISTINCT department FROM employee ORDER BY salary DESC;
 ```
@@ -101,6 +112,7 @@ SELECT department FROM (
 This will return just the department names, ordered by their highest salary. The ORDER BY in the subquery ensures the departments are ranked before projection.
 
 **Note:**
+
 If you use GROUP BY without any aggregate function (like in the example below):
 
 ```sql

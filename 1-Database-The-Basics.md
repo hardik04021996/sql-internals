@@ -25,18 +25,23 @@ A database is a collection of data that holds the data in the form of tables. It
 
 ## Q&A
 **Q: What is a table in a database?**
+
 A: A table stores data in rows and columns, similar to an Excel sheet.
 
 **Q: Why not use Excel for large data?**
+
 A: Excel is not scalable for large datasets; databases offer better management and features.
 
 **Q: What is a relational database?**
+
 A: A database where data is stored in tables with relationships between them. Examples: MySQL, SQL Server, PostgreSQL.
 
 **Q: What is a NoSQL database?**
+
 A: A database that does not use tables with relations; uses key-value, document, or graph storage. Examples: MongoDB, Cassandra, HBase.
 
 **Q: How do databases differ?**
+
 A: Mainly in features (like security, performance, etc.), not in SQL syntax. SQL is the common language for relational databases.
 
 

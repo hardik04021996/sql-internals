@@ -32,22 +32,27 @@ The typical order in which SQL clauses are executed:
 
 ## Q&A
 **Q: Why use indexes?**
+
 A: To speed up data retrieval operations.
 
 **Q: What is the order of SQL execution?**
+
 A: See the table above for the standard order.
 
 **Q: What is a composite index?**
+
 A: An index on multiple columns; improves queries filtering on those columns.
 
 **Q: Can indexes slow down performance?**
+
 A: Yes, indexes speed up reads but slow down writes/updates.
 
 **Q: What is a covering index?**
+
 A: An index that contains all columns needed for a query, allowing the database to avoid reading the table.
 
 **Q: Why is understanding order of execution important?**
+
 A: It helps write efficient queries and avoid logical errors.
 
 ---
-
